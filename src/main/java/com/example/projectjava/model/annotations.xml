@@ -1,0 +1,14 @@
+<root>
+    <item name='com.example.projectjava.model.Country com.example.projectjava.model.Country fromRow(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.Nullable'/>
+    </item>
+    <item name='com.example.projectjava.model.Country com.example.projectjava.model.Country fromRow(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.Nullable'/>
+    </item>
+    <item name='com.example.projectjava.model.Country com.example.projectjava.model.Country fromRow(java.sql.ResultSet)'>
+        <annotation name='org.jetbrains.annotations.Nullable'/>
+    </item>
+    <item name='com.example.projectjava.model.Country com.example.projectjava.model.Country fromRow(java.sql.ResultSet) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

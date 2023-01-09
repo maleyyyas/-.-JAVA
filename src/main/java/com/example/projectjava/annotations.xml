@@ -1,0 +1,59 @@
+<root>
+    <item name='com.example.projectjava.ConnectionUtils ConnectionUtils(java.sql.Connection) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.example.projectjava.ConnectionUtils boolean execute(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.example.projectjava.ConnectionUtils connection'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.example.projectjava.ConnectionUtils int update(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.example.projectjava.ConnectionUtils java.sql.ResultSet query(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.example.projectjava.ConnectionUtils java.sql.ResultSet query(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.example.projectjava.ConnectionUtils java.sql.ResultSet selectAll()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.example.projectjava.ConnectionUtils java.sql.ResultSet selectAllOrdered()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.example.projectjava.ConnectionUtils void insert(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.example.projectjava.ConnectionUtils void insert(com.example.projectjava.model.Country) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.example.projectjava.DatabaseFactory java.sql.Connection getDatabase(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.Nullable'/>
+    </item>
+    <item name='com.example.projectjava.DatabaseFactory java.sql.Connection getDatabase(java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.example.projectjava.Main com.example.projectjava.model.Country getCountryWithAverageStats(com.example.projectjava.ConnectionUtils)'>
+        <annotation name='org.jetbrains.annotations.Nullable'/>
+    </item>
+    <item name='com.example.projectjava.Main com.example.projectjava.model.Country getCountryWithAverageStats(com.example.projectjava.ConnectionUtils) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.example.projectjava.Main com.example.projectjava.model.Country getCountryWithMaxEconomics(com.example.projectjava.ConnectionUtils) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.example.projectjava.Main com.example.projectjava.model.Country getCountryWithMaxEconomy(com.example.projectjava.ConnectionUtils)'>
+        <annotation name='org.jetbrains.annotations.Nullable'/>
+    </item>
+    <item name='com.example.projectjava.Main com.example.projectjava.model.Country getCountryWithMaxEconomy(com.example.projectjava.ConnectionUtils) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.example.projectjava.Main void buildEconomyGraph(com.example.projectjava.ConnectionUtils) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='com.example.projectjava.Main void fillTable(com.example.projectjava.ConnectionUtils) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>
