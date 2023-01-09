@@ -34,8 +34,8 @@ public class Main {
         }
 
         // Заполнение таблицы
-        try (var resultat = utils.selectAll()) {
-            if (!resultat.next()) fillTable(utils);
+        try (var selectAll = utils.selectAll()) {
+            if (!selectAll.next()) fillTable(utils);
         }
 
         // Задача 2.
@@ -47,9 +47,9 @@ public class Main {
 
         // Задача 3.
         // Найдите страну с "самыми средними показателями" среди "Western Europe" и "North America"
-        var sredneeCountry = getCountryWithAverageStats(utils);
+        var averagesCountry = getCountryWithAverageStats(utils);
         System.out.println("The country with the most average indicators: " +
-                (sredneeCountry != null ? sredneeCountry.name() : null));
+                (averagesCountry != null ? averagesCountry.name() : null));
 
         // Задача 1.
         // Сформируйте график по показателю экономики, объединив их по странам
@@ -61,17 +61,17 @@ public class Main {
             String line;
             read.readLine();
             while ((line = read.readLine()) != null) {
-                var countriess = Country.fromRow(line);
-                if (countriess != null) utils.insert(countriess);
+                var row = Country.fromRow(line);
+                if (row != null) utils.insert(row);
             }
         }
     }
 
     private static void buildEconomyGraph(ConnectionUtils utils) throws SQLException {
         var dataset = new DefaultCategoryDataset();
-        try (var result = utils.selectAllOrdered()) {
-            while (result.next()) {
-                var country = Country.fromRow(result);
+        try (var res = utils.selectAllOrdered()) {
+            while (res.next()) {
+                var country = Country.fromRow(res);
                 if (country == null) continue;
                 dataset.addValue(country.economy(), country.name(), "");
             }
@@ -88,24 +88,24 @@ public class Main {
     }
 
     private static Country getCountryWithMaxEconomy(ConnectionUtils utils) throws SQLException {
-        try (var result = utils.query("""
+        try (var set = utils.query("""
             SELECT * FROM COUNTRIES WHERE REGION = 'Latin America and Caribbean' OR REGION = 'Eastern Asia'
             ORDER BY ECONOMY DESC
         """)) {
-            if (result.next()) return Country.fromRow(result);
+            if (set.next()) return Country.fromRow(set);
         }
         return null;
     }
 
     private static Country getCountryWithAverageStats(ConnectionUtils utils) throws SQLException {
-        try (var result = utils.query("""
+        try (var resultSet = utils.query("""
             WITH AVERAGE AS (SELECT avg("HAPPINESS SCORE") + avg("STANDARD ERROR") + avg(ECONOMY) + avg(FAMILY) +
             avg(HEALTH) + avg(FREEDOM) + avg(TRUST) + avg(GENEROSITY) + avg("DYSTOPIA RESIDUAL") FROM COUNTRIES)
             SELECT * FROM COUNTRIES WHERE REGION = 'Western Europe' OR REGION = 'North America'
             ORDER BY abs("HAPPINESS SCORE" + "STANDARD ERROR" + ECONOMY + FAMILY + HEALTH + FREEDOM +
             TRUST + GENEROSITY + "DYSTOPIA RESIDUAL" - (SELECT * FROM AVERAGE));
         """)) {
-            if (result.next()) return Country.fromRow(result);
+            if (resultSet.next()) return Country.fromRow(resultSet);
         }
         return null;
     }
