@@ -1,5 +1,3 @@
-> NOTE: if this repo wasn't given to you specifically, there's nothing interesting.
-
 # Итоговый проект Java
 
 ### Вариант 1: "Показатели стран"
