@@ -61,8 +61,8 @@ public class Main {
             String line;
             read.readLine();
             while ((line = read.readLine()) != null) {
-                var country = Country.fromRow(line);
-                if (country != null) utils.insert(country);
+                var countriess = Country.fromRow(line);
+                if (countriess != null) utils.insert(countriess);
             }
         }
     }
